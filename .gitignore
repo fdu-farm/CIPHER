@@ -10,6 +10,7 @@ logs/
 runs/
 outputs/
 wandb/
+tmp/
 
 *.pt
 *.pth

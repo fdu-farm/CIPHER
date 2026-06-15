@@ -10,6 +10,10 @@ This repository currently packages the **dermoscopy-oriented implementation slic
 
 ## Paper Alignment
 
+![CIPHER causal graph](assets/cipher_causal_graph.png)
+
+![CIPHER framework overview](assets/cipher_framework.png)
+
 The manuscript defines four intervention paths:
 
 ```text
