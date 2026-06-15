@@ -1,0 +1,12 @@
+﻿# Config for test_densenet_no.py
+csv:
+  - data/test.csv
+weights: best_model.pt
+image_root: null
+
+batch_size: 32
+num_workers: 4
+imagenet_init: false
+decision_threshold: 0.3
+
+report_path: null

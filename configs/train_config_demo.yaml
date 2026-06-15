@@ -1,0 +1,30 @@
+# Shareable diffusion fine-tuning example config for the dermoscopy branch of CIPHER.
+# The diffusion backbone learned here is reused by all four causal intervention paths.
+use_auth_token: null
+seed: 873
+data_filter_file: null
+
+image_dir: "./data/isic/images"
+prompt_dir: "./data/isic/prompts"
+
+pretrained_model_name_or_path: "CompVis/stable-diffusion-v1-4"
+pretrained_text_encoder_name_or_path: null
+train_text_encoder: true
+
+resolution: 512
+embedding_method: "last_hidden_state"
+enforce_tokenizer_max_sentence_length: 77
+gradient_accumulation_steps: 1
+lr_scheduler: "cosine"
+mixed_precision: "bf16"
+lr_warmup_steps: 500
+learning_rate: 1.0e-5
+snr_gamma: 5.0
+noise_offset: 0.1
+
+train_batch_size: 16
+max_train_steps: 50000
+output_dir: "./checkpoints/cipher"
+
+checkpointing_steps: 50000
+resume_from_checkpoint: "latest"

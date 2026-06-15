@@ -1,0 +1,80 @@
+# Directory-dataset training config for CIPHER's dermoscopy diffusion backbone.
+# Text prompts should contain both disease tokens and sensitive-attribute tokens
+# so that downstream Path 1-4 interventions can edit them explicitly.
+pretrained_model_name_or_path: "CompVis/stable-diffusion-v1-4"
+revision: null
+pretrained_text_encoder_name_or_path: null
+use_auth_token: null
+embedding_method: "last_hidden_state"
+use_attention_mask: false
+cache_dir: null
+random_unet: false
+enforce_tokenizer_max_sentence_length: 77
+
+# Dataset (image directory + prompt directory).
+image_dir: "./data/isic/images"
+image_type: "pt"
+prompt_dir: "./data/isic/prompts"
+data_filter_file: null
+data_filter_split_token: "\n"
+loss_weights_file: null
+loss_weights_split_token: "\n"
+
+# Optional inference after training.
+inference_prompt_file: null
+inference_prompt_split_token: "\n"
+inference_prompt_number_per_prompt: 4
+inference_prompt_output_file: null
+
+# Output controls.
+save_only_modified_weights: false
+do_not_save_weights: false
+output_dir: "./checkpoints/cipher"
+
+# Reproducibility and image prep.
+seed: 873
+resolution: 512
+center_crop: false
+
+# Training.
+train_text_encoder: true
+train_batch_size: 16
+dataloader_num_workers: 0
+dataloader_pin_memory: false
+dataloader_persistent_workers: false
+dataloader_prefetch_factor: 2
+max_train_samples: null
+num_train_epochs: 100
+max_train_steps: 50000
+gradient_accumulation_steps: 1
+gradient_checkpointing: false
+
+# Optimization.
+learning_rate: 1.0e-5
+scale_lr: false
+lr_scheduler: "cosine"
+lr_warmup_steps: 500
+use_8bit_adam: false
+use_ema: false
+snr_gamma: 5.0
+noise_offset: 0.1
+
+# Adam parameters.
+adam_beta1: 0.9
+adam_beta2: 0.999
+adam_weight_decay: 0.01
+adam_epsilon: 1.0e-08
+max_grad_norm: 1.0
+
+# Logging.
+logging_dir: "logs"
+report_to: "wandb"
+
+# Precision / distributed.
+mixed_precision: "bf16"
+local_rank: 1
+
+# Checkpointing.
+checkpointing_steps: 50000
+checkpoints_total_limit: null
+resume_from_checkpoint: "latest"

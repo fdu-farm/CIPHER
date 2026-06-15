@@ -1,0 +1,27 @@
+# Path 3 / Path 4 instance-anchored editing example.
+# Edit subgroup tokens while keeping disease words fixed for Path 3.
+# Edit disease words while keeping subgroup tokens fixed for Path 4.
+model_path: "./checkpoints/cipher"
+input_image: "example_lesion.png"
+prompt: "45 years old female with light skin tone. Dermoscopic image of a benign melanocytic nevus with light-to-medium brown pigmentation, a fairly symmetric pattern, and smooth lesion borders."
+inversion_prompt: null
+guidance_scale: 7.5
+num_inference_steps: 30
+null_text_steps: 5
+null_text_lr: 0.01
+skip_steps: 0
+scheduler: "ddim"
+resolution: 512
+height: null
+width: null
+seed: null
+output: "generated_image_nulltext.png"
+device: null
+torch_dtype: "auto"
+seg_checkpoint: null
+seg_model: "attunet"
+seg_input_size: 512
+seg_threshold: 0.5
+seg_class_index: 0
+seg_repo: null
+edit_target: "lesion"

@@ -1,0 +1,18 @@
+# Path 1 / Path 2 global generation example.
+# Remove sensitive tokens from the prompt for Path 1.
+# Keep disease fixed and swap subgroup tokens for Path 2.
+model_path: "./checkpoints/cipher"
+prompt: "45 years old female with light skin tone. Dermoscopic image of a benign melanocytic nevus with light-to-medium brown pigmentation, a fairly symmetric pattern, and smooth lesion borders."
+negative_prompt: ""
+guidance_scale: 12.0
+num_inference_steps: 30
+scheduler: "dpmpp"
+height: null
+width: null
+guidance_rescale: null
+seed: null
+output: "generated_image.png"
+device: null
+torch_dtype: "auto"
+attention_slicing: false
+xformers: false

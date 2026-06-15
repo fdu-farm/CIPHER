@@ -1,0 +1,30 @@
+# Config for train_densenet_scratch.py
+train_csv: data/train.csv
+val_csv: data/val.csv
+image_root: null
+
+epochs: 20
+batch_size: 16
+batch_size_grid: null
+
+lr: 1.0e-3
+lr_grid: null
+min_lr: 0.0
+weight_decay: 1.0e-4
+
+num_workers: 4
+seed: 42
+log_dir: runs/multihead_densenet
+
+save_path: best_model.pt
+search_report: best_search_result.txt
+resume_checkpoint: null
+
+decision_threshold: 0.3
+grad_accum_steps: 1
+grad_clip_norm: 1.0
+amp: false
+
+freeze_backbone_epochs: 0
+backbone_lr: null
+early_stop_patience: 5

@@ -1,0 +1,18 @@
+# Path 1 / Path 2 batch generation example.
+model_path: "./checkpoints/cipher"
+csv: "t2i_prompts.csv"
+output_dir: "outputs/t2i_batch"
+output_name: "image_{index:05d}.png"
+prompt: "45 years old female with light skin tone. Dermoscopic image of a benign melanocytic nevus with light-to-medium brown pigmentation, a fairly symmetric pattern, and smooth lesion borders."
+negative_prompt: ""
+guidance_scale: 12.0
+num_inference_steps: 30
+scheduler: "dpmpp"
+height: null
+width: null
+guidance_rescale: null
+seed: null
+device: null
+torch_dtype: "auto"
+attention_slicing: false
+xformers: false

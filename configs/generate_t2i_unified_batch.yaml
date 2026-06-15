@@ -1,0 +1,20 @@
+# Mixed-path batch generation example for assembling CIPHER augmentation sets.
+model_path: "./checkpoints/cipher"
+csv: "unified_prompts.csv"
+output_dir: "outputs/unified_batch"
+output_name: "image_{index:05d}.png"
+prompt: "45 years old female with light skin tone. Dermoscopic image of a benign melanocytic nevus with light-to-medium brown pigmentation, a fairly symmetric pattern, and smooth lesion borders."
+negative_prompt: ""
+strength: 0.5
+guidance_scale: 7.5
+num_inference_steps: 30
+scheduler: "dpmpp"
+resolution: 512
+height: null
+width: null
+guidance_rescale: null
+seed: null
+device: null
+torch_dtype: "auto"
+attention_slicing: false
+xformers: false
