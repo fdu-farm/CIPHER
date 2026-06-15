@@ -1,6 +1,6 @@
 # CIPHER: Causal Intervention Pathways for Healthcare Equity and Robustness
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg)](https://www.python.org/)
+[![arXiv](https://img.shields.io/badge/arXiv-CIPHER-b31b1b.svg)](#paper-alignment)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C.svg)](https://pytorch.org/)
 [![Diffusers](https://img.shields.io/badge/Diffusers-Stable%20Diffusion-FFB000.svg)](https://github.com/huggingface/diffusers)
 
