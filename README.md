@@ -195,6 +195,10 @@ This repository does not ship datasets or pretrained checkpoints.
 - Diffusion fine-tuning expects paired dermoscopy images and text prompts.
 - Classification expects CSV manifests whose first column is the image path.
 - Batch generation scripts expect CSV files with a `prompt` column and optional `image` / `input_image` columns.
+Official dataset links:
+- [CheXpert](https://aimi.stanford.edu/datasets/chexpert-chest-x-rays)
+- [MIMIC-CXR](https://physionet.org/content/mimic-cxr/2.1.0/)
+- [MILK10K](https://api.isic-archive.com/doi/milk10k/)
 
 All config files in `configs/` are templates and should be updated to match your local paths before running experiments.
 
@@ -204,9 +208,22 @@ The paper reports both chest X-ray and dermoscopy experiments. This repository s
 
 ## License
 
-No license file is included in the repository yet. Add a license before public redistribution if you intend to open-source the project.
+This project is released under [Apache 2.0 License](https://github.com/fdu-farm/BrReMark/blob/main/LICENSE).
+
+## Citation
+
+```bibtex
+@inproceedings{CIPHER2026,
+  title={CIPHER: Causal Intervention Pathways for Healthcare Equity and Robustness},
+  author={TODO},
+  booktitle={MICCAI},
+  year={2026}
+}
+```
 
 ## Acknowledgements
 
 - Parts of the diffusion training code are adapted from Hugging Face Diffusers training examples.
+- This work builds on Stable Diffusion for controllable medical image generation.
+- This repository uses the Null-Text Inversion paradigm for instance-anchored counterfactual editing.
 - The repository builds on `diffusers`, `accelerate`, `transformers`, `torchvision`, and related PyTorch tooling.
